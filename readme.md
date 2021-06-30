@@ -489,7 +489,7 @@ class SearchedItem():
 from agent.common.database import SessionLocal
 db:SessionLocal() # DBセッションをオープン
 item = SyuppinItem(<SearchedItemの値を入れる>) # 格納する商品レコードを作成
-db.query(item) # DBに追加 
+db.add(item) # DBに追加 
 db.commit() # 変更を確定
 db.close() # DBをクローズ
 ```
@@ -539,10 +539,24 @@ tables/syuppin.py
             'price_container') 
 ```
 
+### Excel出力
+#### 実装したい要件
+DBに格納されているItemデータをExcelに出力する。
+Excelのレイアウトは予め用意したAmazon出品用のテンプレートを使用する。
+商品一覧ページで、Tableに表示されている１ページ分のデータをExcelに出力する。
+
+#### Task
+1. Excelのテンプレートをopenpyxlを使用して開いてください。
+2. 開いたExcelのテンプレートシートに対して、商品一覧テーブルから取得した商品データを当てはめてください。
+3. 固定値については、共通設定テーブルから取得して当てはめてください。
+4. Excelをダウンロードできるようにしてください。
+Excelをダウンロードするためのヘッダの設定は以下の例を参考にしてください。
+```
+ response = HttpResponse(content_type="application/vnd.ms-excel")
+ response['Content-Disposition'] = f'attachment; filename={<ファイル名>}'
+``` 
+5. 商品一覧ページにExcelダウンロードボタンを作成し、クリック時にExcelをダウンロードするようにしてください。
+6. Excel出力済の商品を削除するボタンを作成し、クリック時に出力済の商品は削除されるようにしてください。
 ====================================================  
 ★★★★★★★★　　以降は作成中。　★★★★★★★★　　
-### Excel出力
-- openpyxlを使用してテンプレートExcelを読み込む。
-- 読み込んだExcelを編集する。
-- ExcelをWeb画面から出力(ダウンロード)できるようにする。
-### Excelの各カラムとDBデータとの紐付けをテーブルで制御する
+
