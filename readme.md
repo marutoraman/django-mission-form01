@@ -260,7 +260,7 @@ class ItemRegisterForm(forms.ModelForm):
         }
 ```
 
-1. item/views/item_register.py および、templates/item/register.html、item/urls.py を作成して、Formの画面表示ができるようにしてください。
+1. item/views/item_register.py および、templates/item/register.htmlを作成して、Formの画面表示ができるようにしてください。
 
 参考：views/item_register.py
 ```
@@ -302,6 +302,7 @@ class ItemRegisterView(generic.TemplateView):
 参考：templates/item/register.html
 register.htmlを作成して、以下のようなイメージで、formタグを記述します。
 {{ form.as_p }}の箇所にFormの要素が一式記述されます。
+messagesは、view側でメッセージが登録されている場合に表示されるようになっています。
 ```
 <form id="main-form" role="form" method="POST">
     {% csrf_token %}
@@ -318,3 +319,4 @@ register.htmlを作成して、以下のようなイメージで、formタグを
     </div>
 </form>
 ```
+
