@@ -22,13 +22,7 @@ from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('django.contrib.auth.urls')), #  追加
-    path('item/', include("item.urls")),
-    path('users/', include("users.urls")),
-    path('index', IndexView.as_view(), name="index")
 ]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # ↓追加
 if settings.DEBUG:

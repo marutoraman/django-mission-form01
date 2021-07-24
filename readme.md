@@ -159,7 +159,7 @@ https://fontawesome.com/icons?d=gallery&p=2
 ここでは、以下のルートのurls.pyの作成と、itemアプリのurls.pyを作成してください。  
 
 
-今回は、アプリは2つ作る想定なので、以下のようにする  
+今回は、アプリは1つ作る想定なので、以下のようにする  
 app/urls.py
 ```
 from django.contrib import admin
@@ -170,9 +170,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls), # 管理画面
-    path('', include('django.contrib.auth.urls')), #  ログイン系処理に必要
     path('item/', include("item.urls")),　# Item
-    path('users/', include("users.urls")) # Users
 ]
 ```
 
