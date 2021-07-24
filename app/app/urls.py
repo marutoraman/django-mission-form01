@@ -18,15 +18,14 @@ from django.urls import path
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from .views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('django.contrib.auth.urls')), #  追加
-    path('syuppin/', include("syuppin.urls")),
-    path('torihiki/', include("torihiki.urls")),
-    path('setting/', include("setting.urls")),
-    path('mypage/', include("mypage.urls")),
-    path('users/', include("users.urls"))
+    path('item/', include("item.urls")),
+    path('users/', include("users.urls")),
+    path('index', IndexView.as_view(), name="index")
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

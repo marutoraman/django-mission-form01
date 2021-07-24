@@ -1,0 +1,41 @@
+﻿{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% block title %} 商品管理 > 商品登録 {% endblock %}
+{% block contents %}
+     <section>
+        <div class="section-header">
+            <h1> 商品登録 </h1>
+        </div>
+        <p>商品を登録できます</p>
+        <div class="section-body">
+            <div class="row">
+                <div class="col-12 col-md-12 col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form id="main-form" role="form" method="POST">
+                                {% csrf_token %}
+                                {% if messages %}
+                                    <ul class="messages_ul">
+                                        {% for message in messages %}
+                                            <li class="alert{% if message.tags %} alert-{{ message.tags }}{% endif %} alert-dismissible text-dark" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>{{ message }}</li>
+                                        {% endfor %}
+                                    </ul>
+                                {% endif %}
+                                {{ form.as_p }}
+                                <div class="mt-2">
+                                    <button id="submit_btn" type="submit" class="btn btn-primary">登録</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}

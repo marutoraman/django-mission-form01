@@ -49,10 +49,8 @@ INSTALLED_APPS = [
     'widget_tweaks',
     'django_tables2',
     'mathfilters',
-    'syuppin',
-    'setting',
+    'item',
     'users',
-    'torihiki'
 ]
 
 MIDDLEWARE = [
@@ -150,5 +148,5 @@ STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-LOGIN_REDIRECT_URL = '/mypage/manual'
+LOGIN_REDIRECT_URL = 'index'
 LOGIN_URL = 'login'

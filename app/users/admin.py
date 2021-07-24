@@ -1,4 +1,3 @@
-from .models import User, YahooAccount
 from django.contrib.auth.admin import UserAdmin
 from django.contrib import admin
 from django.utils.translation import gettext, gettext_lazy as _
@@ -11,19 +10,19 @@ User = get_user_model()
 class AdminUserAdmin(UserAdmin):
 
     fieldsets = (
-        (None, {'fields': ('account_id', 'password','plan')}),
+        (None, {'fields': ('password',)}),
         (_('Personal info'), {'fields': ('full_name', 'email')}),
         (_('Permissions'), {'fields': ('is_active', 'is_staff', 'is_superuser',
                                        )})
     )
-    list_display = ('account_id', 'email', 'full_name', 'plan', 'is_staff')
+    list_display = ('email', 'full_name', 'is_staff')
     list_filter = []
-    search_fields = ('account_id', 'full_name', 'email')
+    search_fields = ('full_name', 'email')
 
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('account_id', 'password1', 'password2'),
+            'fields': ('password1', 'password2'),
         }),
     )
-    ordering = ('account_id',)
+    ordering = ('email',)
