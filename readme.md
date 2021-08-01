@@ -482,6 +482,9 @@ urlpatterns = [
 ```
 
 # 課題６：Table
+完成イメージのようにItemテーブルの情報をTable表示できるようにします。
+![イメージ](https://i.gyazo.com/2fb8d2ed0d3e4fd76cedef1aaa34f022.png)
+
 1. item/tablesフォルダを作成して、その配下にitem.pyを作成してください。  
 item/tables/item.py
 ```
@@ -530,5 +533,3 @@ Web画面から/item/tableのURLで表示できるようにしてください。
         """)
 ```
 
-完成イメージ
-![イメージ](https://i.gyazo.com/2fb8d2ed0d3e4fd76cedef1aaa34f022.png)
