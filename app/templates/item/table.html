@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+
+{% load render_table from django_tables2 %}
+
+{% block contents %}
+<div class="section-header">
+    <h1> 商品一覧 </h1>
+</div>
+<!-- ウィンドウサイズに合わせて枠の大きさを変える -->
+<div class="container-fluid">
+    <!-- 水平方向の横スクロールバーを加える -->
+    <div class="table-responsive col-auto">
+        <div class="mt-2">検索結果: {{ count }} 件</div>
+        <table class="table table-striped">
+            {% render_table table %}
+        </table>
+    </div>
+</div>
+{% endblock %}
+ 
