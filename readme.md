@@ -533,3 +533,7 @@ Web画面から/item/tableのURLで表示できるようにしてください。
         """)
 ```
 
+# 課題７：
+以下のスライドに記載の要件を満たすように実装してください。  
+具体的な課題もスライドに記載しています。
+https://docs.google.com/presentation/d/1Svsjq3aiGWIuJaB8DwWF5fDSHf5Bhy2S8k350AefETk/edit?usp=sharing
